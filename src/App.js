@@ -2,11 +2,12 @@ import "./App.css";
 import React, { useState } from "react";
 import { marked } from "marked";
 import data from "./data/data.json";
+import useLocalStorage from "./useLocalStorage ";
 const App = () => {
-  const [code, setCode] = useState("## Hello");
-  const [compiled, setCompiled] = useState('<h2 id="hello">Hello</h2>');
   const [hide, hidePreview] = useState(true);
   const [show, showDocs] = useState(false);
+  const [code, setCode] = useLocalStorage("code", "## Hello");
+  const [compiled, setCompiled] = useLocalStorage("compiled", "<h2>Hello</h2>");
   const openMD = () => {
     console.log(0);
     hidePreview(true);
@@ -90,8 +91,9 @@ const App = () => {
             <textarea onChange={handleChange} value={code} />
           </div>
         ) : !hide && !show ? (
-          <div>
-            <textarea value={compiled} />
+          <div className="preview">
+            {/* <textarea value={compiled} /> */}
+            <div dangerouslySetInnerHTML={{ __html: compiled }} />
           </div>
         ) : (
           <div className="docs">{docsData}</div>

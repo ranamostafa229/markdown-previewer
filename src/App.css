@@ -14,11 +14,11 @@ body {
   background-color: #e3e3e3;
   padding: 5px 0;
 }
-h1 {
+/* h1 {
   color: #262834;
   font-size: 22px;
   padding: 8px;
-}
+} */
 .container {
   width: 96%;
   margin: 0 auto;
@@ -68,7 +68,8 @@ h1 {
   color: #262834;
   font-weight: bold;
 }
-textarea {
+textarea,
+.preview {
   width: calc(100% - 10px);
   height: calc(100vh - 150px);
   border: none;
@@ -87,9 +88,10 @@ textarea {
   letter-spacing: 0.2px;
   font-family: monospace, sans-serif;
   font-size: 20px;
+  text-align: start;
 }
 .docs {
-  color: #e3e3e3;
+  /* color: #e3e3e3; */
   text-align: start;
   padding: 30px;
   background-color: #121212;
@@ -112,6 +114,7 @@ textarea {
 .docs .description {
   margin-bottom: 5px;
   padding-left: 8px;
+  color: #e3e3e3;
 }
 .examples {
   margin-bottom: 20px;
